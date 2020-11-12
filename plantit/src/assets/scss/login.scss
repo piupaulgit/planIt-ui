@@ -1,0 +1,19 @@
+@import "./variables";
+.login {
+  min-height: 100vh;
+  display: flex;
+  .container-fluid {
+    display: flex;
+    .row {
+      width: 100%;
+    }
+  }
+  .login__left {
+    padding: 50px;
+    .logo {
+      opacity: 0.4;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+}
