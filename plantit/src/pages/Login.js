@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row,Col } from 'react-bootstrap';
+import { Container, Row,Col, Form, FormControl, Button } from 'react-bootstrap';
 import '../assets/scss/login.scss';
 
 const Login = () => {
@@ -14,7 +14,17 @@ const Login = () => {
                         </div>
                     </Col>
                     <Col md={6} className="login__right">
-                        right
+                        <Form>
+                            <Form.Group controlId="email">
+                                <Form.Label>Email address</Form.Label>
+                                <FormControl type="email" placeholder="Enter email"></FormControl>
+                            </Form.Group>
+                            <Form.Group controlId="email">
+                                <Form.Label>Password</Form.Label>
+                                <FormControl type="email" placeholder="Enter Password"></FormControl>
+                            </Form.Group>
+                            <Button type="secondary">Login</Button>
+                        </Form>
                     </Col>
                 </Row>
             </Container>

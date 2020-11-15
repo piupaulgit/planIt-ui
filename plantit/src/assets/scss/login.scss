@@ -16,4 +16,12 @@
       margin-bottom: 20px;
     }
   }
+  .login__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form {
+      width: 50%;
+    }
+  }
 }

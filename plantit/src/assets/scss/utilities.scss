@@ -1,13 +1,13 @@
 @import "./variables";
 .bg-pink {
   background-color: $pink;
-  color: darken($pink, 70%);
+  color: darken($pink, 60%);
 }
 
 // typography
 h1,
 .h1 {
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .font-bold {
