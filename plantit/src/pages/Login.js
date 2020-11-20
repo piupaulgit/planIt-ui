@@ -23,7 +23,7 @@ const Login = () => {
                                 <Form.Label>Password</Form.Label>
                                 <FormControl type="email" placeholder="Enter Password"></FormControl>
                             </Form.Group>
-                            <Button type="secondary">Login</Button>
+                            <Button className="btn btn-dark">Login</Button>
                         </Form>
                     </Col>
                 </Row>

@@ -1,4 +1,7 @@
 @import "./variables";
+body {
+  font-size: 13px;
+}
 .bg-pink {
   background-color: $pink;
   color: darken($pink, 60%);
@@ -12,4 +15,20 @@ h1,
 
 .font-bold {
   font-weight: 900;
+}
+
+// form elements
+.form-group {
+  .form-control {
+    border-radius: 2px;
+    font-size: 13px;
+    min-height: 45px;
+  }
+}
+
+// buttons
+.btn {
+  border-radius: 2px;
+  padding: 8px 25px;
+  font-size: 13px;
 }
