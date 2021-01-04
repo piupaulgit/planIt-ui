@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import { Container, Row,Col, Form, FormControl, Button } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
-import { loginCall, authenticate } from '../apicalls/user';
+import { loginCall } from '../apicalls/user';
 import '../assets/scss/login.scss';
+import { authenticate, isAuthenticated } from '../helper/user';
 
 const Login = () => {
     const [userInfo, setUserInfo] = useState({
         email: '',
-        password: ''
+        password: '',
+        isLoading: false,
+        error: '',
+        redirectEnable: false
     })
+    const {user} = isAuthenticated();
     const Login = (e) =>{
         e.preventDefault();
         loginCall(userInfo).then(res => {
@@ -17,14 +23,20 @@ const Login = () => {
             }
             else{
                 authenticate(res, () => {
-                    
+                    setUserInfo({...userInfo,redirectEnable: true})
                 })
             }
-        })
+        }).catch(err => console.log(err))
     }
     const handleChange = (name) => (e) => {
         const value = e.target.value;
         setUserInfo({...userInfo, [name]:value})
+    }
+
+    const performRedirect = () => {
+        if(userInfo.redirectEnable || isAuthenticated()){
+            return <Redirect to="/dashboard"></Redirect>;
+        }
     }
     return(
         <div className="login">
@@ -51,6 +63,7 @@ const Login = () => {
                     </Col>
                 </Row>
             </Container>
+            {performRedirect()}
         </div>
     )
 }
