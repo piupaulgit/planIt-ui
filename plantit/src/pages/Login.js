@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Container, Row,Col, Form, FormControl, Button } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { loginCall } from '../apicalls/user';
 import '../assets/scss/login.scss';
 import { authenticate, isAuthenticated } from '../helper/user';
-
+toast.configure();
 const Login = () => {
     const [userInfo, setUserInfo] = useState({
         email: '',
@@ -19,14 +19,14 @@ const Login = () => {
         e.preventDefault();
         loginCall(userInfo).then(res => {
             if(res.error){
-                toast.error('ooo')
+                toast.error(res.data)
             }
             else{
                 authenticate(res, () => {
                     setUserInfo({...userInfo,redirectEnable: true})
                 })
             }
-        }).catch(err => console.log(err))
+        }).catch(err => toast.error('Something went wrong.'))
     }
     const handleChange = (name) => (e) => {
         const value = e.target.value;
@@ -34,7 +34,7 @@ const Login = () => {
     }
 
     const performRedirect = () => {
-        if(userInfo.redirectEnable || isAuthenticated()){
+        if(userInfo.redirectEnable || user){
             return <Redirect to="/dashboard"></Redirect>;
         }
     }
