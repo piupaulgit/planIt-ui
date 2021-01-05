@@ -1,11 +1,12 @@
 import React from 'react'
+import Base from '../helper/Base';
 
 function Dashboard() {
     return (
-        <div className="dashboard">
+        <Base title="dashboardu">
             <h1>I am from dashboard</h1>
             <button className="btn btn-primary">Sign out</button>
-        </div>
+        </Base>
     )
 }
 
