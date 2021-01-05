@@ -3,7 +3,7 @@ import Base from '../helper/Base';
 
 function Dashboard() {
     return (
-        <Base title="dashboardu">
+        <Base title="dashboard">
             <h1>I am from dashboard</h1>
             <button className="btn btn-primary">Sign out</button>
         </Base>

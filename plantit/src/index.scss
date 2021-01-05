@@ -18,6 +18,9 @@ body {
   &.logo--large {
     font-size: 35px;
   }
+  &.logo--medium {
+    font-size: 20px;
+  }
   &:before {
     content: "Plan.it";
     font-family: $logoFont;

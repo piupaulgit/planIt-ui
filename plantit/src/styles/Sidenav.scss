@@ -1,0 +1,58 @@
+@import "../assets/scss/variables";
+$sidenav-width: 240px;
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  .sidenav {
+    flex: 0 0 $sidenav-width;
+    max-width: $sidenav-width;
+    .brand {
+      text-align: center;
+      padding: 15px;
+      border-bottom: 1px solid darken($pink, 10%);
+    }
+    .menu {
+      padding: 20px 0;
+      h4 {
+        padding: 10px;
+      }
+      nav {
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          li {
+            a {
+              padding: 15px 25px;
+              display: block;
+              width: 100%;
+              color: darken($pink, 70%);
+              text-decoration: none;
+              font-size: 13px;
+              span {
+                display: inline-block;
+                vertical-align: 2px;
+                padding-right: 8px;
+              }
+              &:hover {
+                background-color: darken($pink, 10%);
+                color: $white;
+                transition: all 0.5s;
+              }
+              &.active {
+                background-color: darken($pink, 12%);
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .main-content {
+    flex: 0 0 calc(100% - #{$sidenav-width});
+    max-width: calc(100% - #{$sidenav-width});
+    background-color: $white;
+  }
+}
