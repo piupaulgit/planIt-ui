@@ -1,0 +1,19 @@
+@import "../assets/scss/variables";
+.footer {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: $white;
+  padding: 0 20px;
+  border-top: 1px solid $light-gray;
+  p {
+    color: #a5a5a5;
+    font-size: 13px;
+    margin-bottom: 0;
+    svg {
+      fill: red;
+      padding-left: 4px;
+    }
+  }
+}

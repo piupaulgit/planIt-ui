@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import '../styles/Sidenav.scss';
+import Footer from './Footer';
 import Header from './Header';
 const Sidenav = (prop) => {
     return (
@@ -61,6 +62,7 @@ const Sidenav = (prop) => {
                 <div className="main-content">
                     <Header title={prop.title}></Header>
                     {prop.mainContent}
+                    <Footer></Footer>
                 </div>
         </div>
     )
