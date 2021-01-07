@@ -1,0 +1,8 @@
+@import "../assets/scss/variables";
+.style-guide {
+  background-color: $gray;
+  min-height: 100vh;
+  .block {
+    margin-bottom: 50px;
+  }
+}
