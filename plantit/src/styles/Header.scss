@@ -1,7 +1,16 @@
 @import "../assets/scss/variables";
 .header {
-  padding: 20px;
-  border-bottom: 1px solid $light-gray;
+  height: 61px;
+  box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
   font-size: 14px;
   text-transform: capitalize;
+  position: fixed;
+  background-color: $white;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  font-weight: 800;
+  align-items: center;
+  text-transform: uppercase;
+  color: $dark-light;
 }

@@ -24,7 +24,7 @@ $sidenav-width: 240px;
           width: 100%;
           li {
             a {
-              padding: 15px 25px;
+              padding: 15px 15px;
               display: block;
               width: 100%;
               color: darken($pink, 70%);
@@ -43,6 +43,7 @@ $sidenav-width: 240px;
               &.active {
                 background-color: darken($pink, 12%);
                 color: $white;
+                // border-left: 2px solid darken($pink, 70%);
               }
             }
           }
