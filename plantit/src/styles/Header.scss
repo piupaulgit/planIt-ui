@@ -1,6 +1,7 @@
+@import "../assets/scss/variables";
 .header {
   padding: 20px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid $light-gray;
   font-size: 14px;
   text-transform: capitalize;
 }
