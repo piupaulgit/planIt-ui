@@ -58,3 +58,24 @@ h4,
     background-color: $gray;
   }
 }
+
+// badge
+.badge {
+  padding: 4px 8px;
+  & + .badge {
+    margin-left: 6px;
+  }
+}
+
+// search input
+.input-has-icon {
+  position: relative;
+  input {
+    padding-right: 40px;
+  }
+  svg {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+  }
+}
