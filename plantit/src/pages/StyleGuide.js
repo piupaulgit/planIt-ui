@@ -25,7 +25,7 @@ const StyleGuide = ()=> {
                     <hr></hr>
                     <div className="card">
                         <div className="card-body">
-                                [class="card"]
+                                [className="card"]
                         </div>
                     </div>
                 </div>
