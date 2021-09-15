@@ -9,13 +9,16 @@ const Clients = () => {
     const handleCloseModal = () => setShow(false);
     const handleShowModal = () => setShow(true);
 
-    const getAllClients = () => {
-       console.log('tes')
-    }
-
     useEffect(() => {
         getAllClients()
     }, [])
+    const getAllClients = () => {
+        getClients().then(res => {
+            console.log(res)
+        })
+    }
+
+
   
     return (
         <Base title="Clients">
