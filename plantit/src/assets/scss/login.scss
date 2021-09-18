@@ -10,6 +10,10 @@
   }
   .login__left {
     padding: 50px;
+    .loginImage {
+      margin-top: 40px;
+      max-height: 55vh;
+    }
     .logo {
       opacity: 0.4;
       display: block;

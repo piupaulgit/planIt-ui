@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { loginCall } from '../apicalls/user';
 import '../assets/scss/login.scss';
+import img from '../assets/images/login.png';
 import { authenticate, isAuthenticated } from '../helper/user';
 toast.configure();
 const Login = () => {
@@ -46,6 +47,7 @@ const Login = () => {
                         <div>
                             <span className="logo logo--large"></span>
                             <h1 className="text-uppercase font-bold">Plan your project <br></br>like a PRO</h1>
+                            <img src={img} alt="" className="loginImage"></img>
                         </div>
                     </Col>
                     <Col md={7} lg={6} className="login__right">
