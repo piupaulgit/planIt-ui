@@ -6,8 +6,13 @@ import { loginCall } from '../apicalls/user';
 import '../assets/scss/login.scss';
 import img from '../assets/images/login.png';
 import { authenticate, isAuthenticated } from '../helper/user';
+import {useSelector} from 'react-redux';
+
 toast.configure();
 const Login = () => {
+    const state = useSelector(state => {
+        console.log(state)
+    })
     const [userInfo, setUserInfo] = useState({
         email: '',
         password: '',
