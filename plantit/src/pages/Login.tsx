@@ -9,8 +9,9 @@ import { authenticate, isAuthenticated } from '../helper/user';
 import {useSelector} from 'react-redux';
 
 toast.configure();
-const Login = () => {
-    const state = useSelector(state => {
+
+const Login:React.FC = () => {
+        const state = useSelector(state => {
         console.log(state)
     })
     const [userInfo, setUserInfo] = useState({
@@ -21,7 +22,7 @@ const Login = () => {
         redirectEnable: false
     })
     const {user} = isAuthenticated();
-    const Login = (e) =>{
+    const Login = (e: React.MouseEvent<HTMLElement, MouseEvent>) =>{
         e.preventDefault();
         loginCall(userInfo).then(res => {
             if(res.error){
@@ -34,7 +35,7 @@ const Login = () => {
             }
         }).catch(err => toast.error('Something went wrong.'))
     }
-    const handleChange = (name) => (e) => {
+    const handleChange = (name:string) => (e:React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         setUserInfo({...userInfo, [name]:value})
     }
@@ -44,7 +45,7 @@ const Login = () => {
             return <Redirect to="/dashboard"></Redirect>;
         }
     }
-    return(
+    return (
         <div className="login">
             <Container fluid className="p-0">
                 <Row className="m-0">
