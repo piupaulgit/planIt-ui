@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
-import { Container, Row,Col, Form, FormControl, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form, FormControl, Button } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { loginCall } from '../apicalls/user';
 import '../assets/scss/login.scss';
 import img from '../assets/images/login.png';
 import { authenticate, isAuthenticated } from '../helper/user';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
+
+
+
 
 toast.configure();
 
-const Login:React.FC = () => {
-        const state = useSelector(state => {
+const Login: React.FC = () => {
+    const state = useSelector(state => {
         console.log(state)
     })
     const [userInfo, setUserInfo] = useState({
@@ -21,27 +24,27 @@ const Login:React.FC = () => {
         error: '',
         redirectEnable: false
     })
-    const {user} = isAuthenticated();
-    const Login = (e: React.MouseEvent<HTMLElement, MouseEvent>) =>{
+    const { user } = isAuthenticated();
+    const Login = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
         e.preventDefault();
         loginCall(userInfo).then(res => {
-            if(res.error){
+            if (res.error) {
                 toast.error(res.data)
             }
-            else{
+            else {
                 authenticate(res, () => {
-                    setUserInfo({...userInfo,redirectEnable: true})
+                    setUserInfo({ ...userInfo, redirectEnable: true })
                 })
             }
         }).catch(err => toast.error('Something went wrong.'))
     }
-    const handleChange = (name:string) => (e:React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (name: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
-        setUserInfo({...userInfo, [name]:value})
+        setUserInfo({ ...userInfo, [name]: value })
     }
 
     const performRedirect = () => {
-        if(userInfo.redirectEnable || user){
+        if (userInfo.redirectEnable || user) {
             return <Redirect to="/dashboard"></Redirect>;
         }
     }
